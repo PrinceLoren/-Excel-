@@ -20,27 +20,22 @@ export function matrix($target, $current) {
     }, [])
 }
 
-export function nextSelector(key ,{col, row}) {
+export function nextSelector(key, {col, row}) {
     const MIN_VALUE = 0
-
-    const MAX_VALUE = 25
-
     switch (key) {
-        case  'Enter':
+        case 'Enter':
         case 'ArrowDown':
             row++
             break
         case 'Tab':
         case 'ArrowRight':
-            col = col + 1  > MAX_VALUE ? MAX_VALUE : col + 1
+            col++
             break
         case 'ArrowLeft':
             col = col - 1 < MIN_VALUE ? MIN_VALUE : col - 1
             break
         case 'ArrowUp':
             row = row - 1 < MIN_VALUE ? MIN_VALUE : row - 1
-            break
-        case 'Mouse0':
             break
     }
 
